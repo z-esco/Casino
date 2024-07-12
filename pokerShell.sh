@@ -1,9 +1,13 @@
 #!/bin/sh
-g++ -c gameDef.cpp
-g++ -c gameRun.cpp
-g++ -c runFiveCard.cpp
-g++ -c poker.cpp
-g++ runBlackjack.o gameDef.o welcomeDef.o gameRun.o runFiveCard.o poker.o -o playgame
-./playgame
+touch linkList.txt
+ls *.o > linkList.txt
 
-#Runs blackjack and then bets 50
+CMD="g++ "
+while read -r FILE; 
+do
+    CMD+="$FILE "
+
+done < linkList.txt
+CMD+="-o ./playgame"
+eval "$CMD"
+./playgame

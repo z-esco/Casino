@@ -1,0 +1,12 @@
+blackjack.o
+cardDefs.o
+decks.o
+fiveCardFunctions.o
+gameDef.o
+gameRun.o
+playerDefs.o
+poker.o
+rankDefs.o
+runBlackjack.o
+runFiveCard.o
+welcomeDef.o
