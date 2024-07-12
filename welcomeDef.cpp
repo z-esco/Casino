@@ -9,6 +9,7 @@ char welcome(){
     std::cout << "\nWelcome to our casino!\n\nPlease select a menu option:";
     std::cout << "\n(A) Blackjack\n(B) Five-Card Draw\n(C) Texas Hold 'Em\n"; //add for every game
     do{//checks input validity
+    std::cout << "Selection: ";
     std::cin >> input;
     input = toupper(input);
     switch(input){//add to every game

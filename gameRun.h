@@ -29,8 +29,7 @@ class Card
     char suit;
 };
 
-class Deck
-{
+class Deck{
     public:
     //constructors
     Deck();
@@ -95,5 +94,6 @@ void deal(Player& p, Deck& deck);
 void runBlackjack();
 void runFiveCard();
 bool const checkPlayAgain();
+unsigned int errorCheckInput(std::string prompt, unsigned int lowerBound, unsigned int upperBound);
 
 #endif

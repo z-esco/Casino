@@ -1,5 +1,4 @@
 #include "gameRun.h"
-#include <vector>
 
 //Extra function declarations for blackjack game
 int const addHand(std::vector<Card> hand);

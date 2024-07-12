@@ -37,6 +37,9 @@ class Rank{
 
 //Five Card Functions
 int fiveCardWelcome();
+void swap(Player& p, Deck& deck);
+bool repeatCheck(const int& size, int& repeat, int swaps[]);
+int highestRank(Rank handRanks[], Rank tempRank, int size, Player pList[]);
 
 //Misc function decs
 Rank judgeHand(std::vector<Card>& hand);
@@ -47,6 +50,3 @@ bool const checkFlush(std::vector <Card> hand);
 void checkPairs(std::vector <Card> hand, int&pairCount1, int& pair1, int& pairCount2, int& pair2);
 int const checkMatch(std::vector <Card> hand, int ind);
 char getFaceChars(int v);
-void swap(Player& p, Deck& deck);
-bool repeatCheck(const int& size, int& repeat, int swaps[]);
-int highestRank(Rank handRanks[], Rank tempRank, int size, Player pList[]);

@@ -1,8 +1,4 @@
-#include "blackjack.cpp"
-
-
-#include <iostream>
-#include <vector>
+#include "blackjack.h"
 
 void runBlackjack(){
     //creates player & dealer
