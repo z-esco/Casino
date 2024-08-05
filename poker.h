@@ -54,12 +54,51 @@ char getFaceChars(int v);
 double* betRound(Player pList[], int BB, int pNum, double blind){
     double callAmt;
     double pBet[pNum];
+    int action = (BB +1) % pNum ;
+    int playerResponse;
+
+    bool allPlayersPlayed = false;
+
+    for(int i = 0; i<pNum; i++)
+        pBet[i] = 0.00;
 
     callAmt = blind;
-    for(int i = 1; i <= pNum ; i++){
-        pBet[i] = pList[BB + i % pNum].bet(callAmt);
-         
-    }
+    while(!allPlayersPlayed){
+        //sets all computers to call
+        if(action != 0){
+            pBet[action] = callAmt;
+        }
+        //asks player for move and then conducts move
+        else{
+            std::cout <<"The current bet is " << callAmt << std::endl;
+            char acceptableResponses[] = {'C', 'R', 'F'};
+            
+            if(callAmt == pBet[0])
+                playerResponse = 'C';
+            else
+                playerResponse = errorCheckInput("\nWould you like to:\n(C)\tCall\n(R)\tRaise\n(F)\tFold\n\n", acceptableResponses, 3);
 
+            switch(playerResponse){
+                case 'C':
+                    pBet[action] = callAmt;
+                    allPlayersPlayed = true;
+                    break;
+                case 'R':
+                    pBet[action] = pList[action].bet(callAmt);
+                    callAmt = pBet[action];
+                    break;
+                case 'F':
+                    pBet[action] = 0;
+                    allPlayersPlayed = true;
+                    break;
+                default:
+                    std::cout << "Input error. Try again.\n\n";
+                    action = (action -1) % pNum;
+                    break;
+            } 
+        }
+        action = (action +1) % pNum;
+    }         
 
+    return pBet;
 }

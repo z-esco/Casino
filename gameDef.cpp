@@ -89,3 +89,28 @@ unsigned int errorCheckInput(std::string prompt, unsigned int lowerBound, unsign
     return input;
 }
 
+char errorCheckInput(std::string prompt, char acceptableResponses[], int length){
+    char input;
+    bool valid = false;
+    bool acceptable = false;
+    do{
+        //checks validity of input
+        std::cout << prompt;
+        std::cin >> input;
+
+        for(int i = 0; i < length; i++){
+            if(acceptableResponses[i] == input){
+                acceptable = true;
+            }
+        }
+
+        if(std::cin.fail() || !acceptable){
+            std::cin.clear();
+            std::cin.ignore();      
+        }
+        else
+            valid = true;
+    }while(valid == false);
+    
+    return input;
+}

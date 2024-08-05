@@ -49,7 +49,6 @@ class Deck{
 
 class Player{
     //friend function to order cards
-    void friend Order(std::vector <Card> &hand);
     Player& operator=(Player p);
     public:
     //constructors
@@ -95,5 +94,7 @@ void runBlackjack();
 void runFiveCard();
 bool const checkPlayAgain();
 unsigned int errorCheckInput(std::string prompt, unsigned int lowerBound, unsigned int upperBound);
+char errorCheckInput(std::string prompt, char acceptableResponses[], int length);
+
 
 #endif
