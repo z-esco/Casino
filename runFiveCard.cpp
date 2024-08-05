@@ -2,8 +2,9 @@
 
 void runFiveCard(){
     //creates necessary variables
-    int pNum, winnerInd;
+    int pNum, winnerInd, BBind, LBind;
     bool keepPlaying;
+    double bigBlind;
 
     //initalizes necessary variables
     pNum = fiveCardWelcome();
@@ -20,10 +21,18 @@ void runFiveCard(){
     //sets randomness for deck
     srand(time(0));
 
+    //randomly sets Big and Little Blinds
+    BBind = rand() % 5;
+    LBind = (BBind - 1) % 5;
+
+    //set BigBlinds
+    bigBlind = 20.00;
+
     keepPlaying = true;
     while(keepPlaying){
         //creates new deck
         Deck deck;
+
         //deals five cards to each player
         for(int j = 0; j < 5; j++){
             for(int i = 0; i < pNum; i++)

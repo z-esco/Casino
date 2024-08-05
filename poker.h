@@ -50,3 +50,16 @@ bool const checkFlush(std::vector <Card> hand);
 void checkPairs(std::vector <Card> hand, int&pairCount1, int& pair1, int& pairCount2, int& pair2);
 int const checkMatch(std::vector <Card> hand, int ind);
 char getFaceChars(int v);
+
+double* betRound(Player pList[], int BB, int pNum, double blind){
+    double callAmt;
+    double pBet[pNum];
+
+    callAmt = blind;
+    for(int i = 1; i <= pNum ; i++){
+        pBet[i] = pList[BB + i % pNum].bet(callAmt);
+         
+    }
+
+
+}

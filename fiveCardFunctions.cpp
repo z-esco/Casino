@@ -1,8 +1,7 @@
-#include "poker.h"
+# include "poker.h"
 
 const unsigned int MIN_PLAYERS = 2;
 const unsigned int MAX_PLAYERS = 5;
-
 const unsigned int CARDS_PER_HAND = 5;
 
 int fiveCardWelcome(){

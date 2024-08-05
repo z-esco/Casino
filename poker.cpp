@@ -183,26 +183,14 @@ char getFaceChars(int v){
 
     return val;
 }
-void Order(std::vector <Card> &hand){
+void order(std::vector <Card> &hand){
     int tempInd;
     Card temp1, temp2;
     bool change;
-    for(int j = 0; j< hand.size(); j++){
-        temp1 = hand[j];
-        //gets smallest value
-        for(int i = j; i<hand.size(); i++){
-            if(hand[i].getValue() < temp1.getValue()){
-                temp1 = hand[i];
-                tempInd = i;
-                change = true;
-            }
-        }
-        if(change){
-            //puts smallest value at the front
-            temp2 = hand[j];
-            hand[j] = temp1;
-            hand[tempInd] = temp2;
-            change = false;
+    for(int j = 0; j< hand.size()-1; j++){
+        if(hand[j].getValue() > hand[j+1].getValue()){
+            std::swap(hand[j], hand[j+1]);
+            j= -1;
         }
     }
 }

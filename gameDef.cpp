@@ -37,6 +37,7 @@ void deal(Player& p, Deck& deck){
     p.setHand(deck.pullCard(cardNum));
     deck.removeCard(cardNum);
 }
+
 bool const checkPlayAgain(){
     char playAgainChoice;
     bool playAgain;
