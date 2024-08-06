@@ -1,7 +1,33 @@
 //File breakdown
 
-//Welcome file
-//header
-//definitions: blackjack specifc
-//definitons: used in all games
-//blackjack driver
+//documentation
+README.md: a Read Me file detailing the use of all of the header files
+file_breakdown.txt: this file explaining all of the other opens
+
+//shells
+pokerShell.sh: shell script that links all the .o files and opens the game\
+compileAll.sh: a script that compiles all .cpp files in the folder
+linkList.txt: a text file necessary to run compileAll
+
+
+//header files
+gameRun.h:  the main header file that declares the functions for the entire Casino
+blackjack.h: tyhe header file for the blackjack exlcusive functions
+poker.h: the header file declaring all of the necessary function needed to play any type of poker(not blackjack)
+fiveCard.h: contains the declarations of all the five card games
+
+//fucntion defintions
+main.cpp: The main function that runs all of the games
+runBlackjack.cpp: a definiton file that holds the fucntions necessary for progressing through the blackjack game
+runFiveCard.cpp: runs the five card game and defines its function
+
+poker.cpp: the defintions for all of the poker exclusive function
+blackjack.cpp: the defintions of the functions exclusive to blackjack
+fiveCard.cpp: a definition file containing all of the functions exclusively used for Five Card Draw
+
+gameDefs.cpp: defintion file which contains the function that will be used in all games and in the outer Casino structure
+rankDefs.cpp: defintion file for the Rank class that displays its member functions
+playerDefs.cpp: file defining the Plsyer class and all its functions
+deckDefs.cpp: a file defining the decks class and all its functions
+welcomeDef.cpp: a defintion for the introduction screen
+

@@ -1,4 +1,4 @@
-#include "poker.h"
+#include "fiveCard.h"
 
 void runFiveCard(){
     //creates necessary variables

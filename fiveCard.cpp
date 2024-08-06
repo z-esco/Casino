@@ -1,4 +1,4 @@
-# include "poker.h"
+#include "fiveCard.h"
 
 const unsigned int MIN_PLAYERS = 2;
 const unsigned int MAX_PLAYERS = 5;

@@ -118,27 +118,6 @@ void Player::rakeIn(double amt){
     setFunds(getFunds() + amt);
 }
 
-void order(std::vector <Card> &hand){
-    int tempInd;
-    Card temp1, temp2;
-    
-    for(int j = 0; j< hand.size(); j++){
-        temp1 = hand[j];
-        //gets smallest value
-        for(int i = j; i<hand.size(); i++){
-            if(hand[i].getValue() < temp1.getValue()){
-                temp1 = hand[i];
-                tempInd = i;
-            }
-        }
-        //puts smallest value at the front
-        temp2 = hand[j];
-        hand[j] = temp1;
-        hand[tempInd] = temp2;
-        
-    }
-}
-
 Player& Player::operator=(Player p){
     for(int i=0; i<5;i++){
     hand[i] = p.getCard(i);

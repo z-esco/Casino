@@ -1,9 +1,9 @@
 blackjack.o
 cardDefs.o
-decks.o
-fiveCardFunctions.o
-gameDef.o
-gameRun.o
+deckDefs.o
+fiveCard.o
+gameDefs.o
+main.o
 playerDefs.o
 poker.o
 rankDefs.o
