@@ -19,16 +19,16 @@ int fiveCardWelcome(){
 void swap(Player& p, Deck& deck){
     int toSwitch;
     bool valid;
-
     //checks validity of input
        toSwitch = errorCheckInput("\nHow many card would you like to replace? (0-5)\n", 0 , CARDS_PER_HAND);
 
     //gets indicies of the cards to switch
     if(toSwitch > 0){
         int swaps[toSwitch];    //creates list of indices that user wants to replace
-        for(int i = 0; i < toSwitch; i++)
-            swaps[i] = errorCheckInput("Input the indices of the cards to switch(0-4)\n", 0, 5);
-
+        for(int i = 0; i < toSwitch; i++){
+            p.printHand();
+            swaps[i] = errorCheckInput("Input the indices of the cards to switch(0-4)\n", 0, CARDS_PER_HAND);
+        }
         //makes sure none of the indices repeat
         int repeatInd = 0;
         bool repeat;

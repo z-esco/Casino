@@ -72,7 +72,6 @@ bool const checkPlayAgain(){
 unsigned int errorCheckInput(std::string prompt, unsigned int lowerBound, unsigned int upperBound){
     unsigned int input;
     bool valid = false;
-    
     do{
         //checks validity of input
         std::cout << prompt;
@@ -84,8 +83,7 @@ unsigned int errorCheckInput(std::string prompt, unsigned int lowerBound, unsign
         }
         else
             valid = true;
-    }while(valid == false);
-    
+    }while(valid == false);    
     return input;
 }
 

@@ -44,4 +44,7 @@ bool const checkFlush(std::vector <Card> hand);
 void checkPairs(std::vector <Card> hand, int&pairCount1, int& pair1, int& pairCount2, int& pair2);
 int const checkMatch(std::vector <Card> hand, int ind);
 char getFaceChars(int v);
-double* betRound(Player pList[], double pBet[], int BB, int pNum, double blind);
+std::vector<double> betRound(Player pList[], int BB, int pNum, double blind);
+double collectPot(std::vector<double> bets);
+
+

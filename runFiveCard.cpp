@@ -14,6 +14,10 @@ void runFiveCard(){
 
     //creates list of hand Ranks
     Rank handRanks[pNum];
+
+    //create betting pot
+    double pot = 0.00;
+    std::vector<double> playerBets;
     
     //creates a temporary rank to help store hand ranks
     Rank tempRank;
@@ -48,9 +52,18 @@ void runFiveCard(){
         std::cout<< "Your hand: ";
         pList[0].printHand();
 
+        //gets bets from players ********In terminal version all bets from AI are calls********
+        playerBets = betRound(pList, BBind, pNum, bigBlind);
+        pot += collectPot(playerBets);
+
+
         swap(pList[0], deck);
 
         pList[0].printHand();
+
+        //second round of bets
+        playerBets = betRound(pList, BBind, pNum, 0);
+        pot += collectPot(playerBets);
 
         //gives a rank to each player
         for(int i = 0; i < pNum; i++){
@@ -61,9 +74,9 @@ void runFiveCard(){
         //determines the player with the highest rank
         winnerInd = highestRank(handRanks, tempRank, pNum, pList);
 
-        std::cout << "Player " << winnerInd +1 << " wins!\nThey had a ";
+        std::cout << "Player " << winnerInd +1 << " wins "<< pot<< "!\nThey had a ";
         handRanks[winnerInd].printRank();
-        pList[winnerInd].printHand();       
+        pList[winnerInd].printHand();    
 
         //clears every  players hand
         for(int i = 0; i < pNum; i++)

@@ -195,15 +195,16 @@ void order(std::vector <Card> &hand){
     }
 }
 
-double* betRound(Player pList[], double pBet[], int BB, int pNum, double blind){
+std::vector<double> betRound(Player pList[], int BB, int pNum, double blind){
     double callAmt;
     int action = (BB +1) % pNum ;
     int playerResponse;
+    std::vector<double> pBet;
 
     bool allPlayersPlayed = false;
 
     for(int i = 0; i<pNum; i++)
-        pBet[i] = 0.00;
+        pBet.push_back(0.00);
 
     callAmt = blind;
     while(!allPlayersPlayed){
@@ -220,6 +221,8 @@ double* betRound(Player pList[], double pBet[], int BB, int pNum, double blind){
                 playerResponse = 'C';
             else
                 playerResponse = errorCheckInput("\nWould you like to:\n(C)\tCall\n(R)\tRaise\n(F)\tFold\n\n", acceptableResponses, 3);
+
+            toupper(playerResponse);
 
             switch(playerResponse){
                 case 'C':
@@ -243,4 +246,14 @@ double* betRound(Player pList[], double pBet[], int BB, int pNum, double blind){
         action = (action +1) % pNum;
     }         
     return pBet;
+}
+
+double collectPot(std::vector<double> bets){
+    double total = 0.0;
+    for( int i = bets.size()-1; i>=0; i--){
+        total+= bets[i];
+        bets.pop_back();
+    }
+
+    return total;
 }
